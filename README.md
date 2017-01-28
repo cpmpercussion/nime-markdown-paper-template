@@ -29,7 +29,7 @@ below.
   the `rendered-output.tex` file and just work in Latex to fix problems!
 
 
-## Problems with this repository {#sec:problems}
+## Problems with this repository
 
 A couple of things in this repository may not work correctly! If all else
 fails, look at the intermediary output file `rendered-output.tex` and
@@ -41,7 +41,7 @@ to `nime.latex` to fix some of the following things:
 - It would be nice to have a CSL file that outputs similar to
   `abbrvurl.bst` used in the NIME template.
   
-## Future Ideas {#sec:future-ideas}
+## Future Ideas 
 
 - get tables to work?
 - make a decent CSL file for processing citations with
@@ -49,7 +49,7 @@ to `nime.latex` to fix some of the following things:
   hanging indent needs some work.
 - any other suggestions or forks improving these ideas? 
 
-## Conclusion {#sec:conclusion}
+## Conclusion 
 
 - It is possible to write academic papers for NIME in Markdown format!
 - It is possible to get them to look _exactly_ the same as the Latex
