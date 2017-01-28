@@ -1,0 +1,73 @@
+%% Pandoc template for creating NIME papers
+%% Adapted from NIME paper template and Pandoc latex template.
+
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+\usepackage{hyperref}
+
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+$if(tables)$
+\usepackage{longtable,booktabs}
+\makeatletter
+\let\oldlt\longtable
+\let\endoldlt\endlongtable
+\def\longtable{\@ifnextchar[\longtable@i \longtable@ii}
+\def\longtable@i[#1]{\begin{figure}[tbh]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldlt[#1]
+}
+\def\longtable@ii{\begin{figure}[t]
+\onecolumn
+\begin{minipage}{0.5\textwidth}
+\oldlt
+}
+\def\endlongtable{\endoldlt
+\end{minipage}
+\twocolumn
+\end{figure}}
+\makeatother
+$endif$
+
+%% Macros from the Pandoc default commands:
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+\conferenceinfo{NIME'17,}{May 15-19, 2017, Aalborg University Copenhagen, Denmark.}
+\title{$title$}
+
+$if(author)$
+\numberofauthors{3}
+\author{
+$for(author)$
+  \alignauthor
+  $author.name$ \\
+  \affaddr{$author.affiliation$}\\
+  \email{$author.email$}
+$endfor$
+}
+$endif$
+
+\maketitle
+
+\begin{abstract}
+$abstract$
+\end{abstract}
+
+\keywords{$keywords$}
+
+\acmclassification1998{$acmClass$}
+
+$body$
+
+$if(natbib)$
+\bibliographystyle{abbrvurl}
+\bibliography{$bibliography$}
+$endif$
+
+\end{document}
